@@ -1,0 +1,300 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Full-Screen Section */
+.full-screen-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5em;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Toggle Button */
+.nav-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+.hamburger {
+    display: inline-block;
+    width: 25px;
+    height: 2px;
+    background-color: white;
+    position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    width: 25px;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    transition: all 0.3s;
+}
+
+.hamburger::before {
+    transform: translateY(-8px);
+}
+
+.hamburger::after {
+    transform: translateY(8px);
+}
+
+/* Responsive Menu */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 0;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: #333;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+    .nav-links li {
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #444;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-links.open {
+        max-height: 300px;
+    }
+
+    .hamburger.active {
+        background-color: transparent;
+    }
+
+    .hamburger.active::before {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active::after {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+
+/* Section Styles */
+section {
+    padding: 20px;
+    margin: 0;
+}
+
+#home h1, #about h2, #projects h2, #contact h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+#home h2 {
+    font-size: 2.5em;
+    color: #333;
+}
+
+#home h3 {
+    font-size: 1.5em;
+    color: #666;
+}
+
+.highlight {
+    color: #f59e0b; /* Kuning sesuai panduan */
+    font-weight: bold;
+}
+
+#home p {
+    font-style: italic;
+    margin: 20px 0;
+}
+
+.btn {
+    background-color: #fbbf24; /* Kuning utama */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: #f59e0b; /* Kuning gelap */
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #4b5563; /* Abu-abu gelap */
+    font-size: 1.2em;
+}
+
+.social-links a:hover {
+    color: #f59e0b; /* Kuning gelap */
+}
+
+/* About Section */
+#about p {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #333;
+}
+
+/* Projects Section */
+#projects .project {
+    background-color: #eaeaea;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* Contact Section */
+#contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#contact form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#contact form input[type="text"], 
+#contact form input[type="email"],
+#contact form textarea {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+#contact form textarea {
+    height: 100px;
+}
+
+#contact form input[type="submit"] {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#contact form input[type="submit"]:hover {
+    background-color: #555;
+}
+
+.profile-photo {
+    border-radius: 50%; /* Membuat gambar menjadi bulat */
+    width: 150px; /* Atur lebar gambar sesuai kebutuhan */
+    height: 150px; /* Atur tinggi gambar sesuai kebutuhan */
+    object-fit: cover; /* Memastikan gambar terpotong dengan baik */
+    margin-bottom: 20px; /* Jarak antara gambar dan teks di bawahnya */
+    margin-top: 100px;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: white;
+    position: relative;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .profile-photo {
+        width: 120px; /* Ukuran gambar lebih kecil untuk perangkat kecil */
+        height: 120px; /* Sesuaikan tinggi gambar */
+    }
+
+    #home h1 {
+        font-size: 1.8em; /* Ukuran font untuk perangkat kecil */
+    }
+
+    #home h2 {
+        font-size: 2.2em; /* Ukuran font untuk perangkat kecil */
+    }
+
+    #home h3 {
+        font-size: 1.2em; /* Ukuran font untuk perangkat kecil */
+    }
+
+    #about p,
+    #projects .project p {
+        font-size: 0.9em; /* Ukuran font untuk teks di about dan projects */
+    }
+
+    #contact form {
+        max-width: 90%; /* Lebar form lebih besar untuk perangkat kecil */
+    }
+}
